@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Ticket Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Admin - Ticket Management</h1>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('addTicket') }}">Add Ticket</a>
+    </header>
+    <main>
+        <h2 style="margin-top: 40px;">Manage Tickets</h2>
+       
+        <!-- <ul>
+            {% for ticket in tickets %}
+            <li>
+                {{ ticket.event }} on {{ ticket.date }} (${{ ticket.price }})
+                <a href="{{ url_for('editTicket', id=ticket.id) }}">Edit</a>
+                <a href="{{ url_for('deleteTicket', id=ticket.id) }}">Delete</a>
+                <a href="{{ url_for('viewBookings', id=ticket.id) }}">View Bookings</a>
+            </li>
+            {% endfor %}
+        </ul> -->
+        <table>
+            <tr>
+                <th>TICKET EVENT</th>
+                <th>DATE</th>
+                <th>PRICE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+                <th>VIEW BOOKS</th>
+                
+            </tr>
+            {% for ticket in tickets  %}
+                <tr>
+                    <tr>
+                        <td>{{ ticket.event }}</td>
+                        <td>{{ ticket.date }}</td>
+                        <td>(${{ ticket.price }})</td>
+                        <td> <a href="{{ url_for('editTicket', id=ticket.id) }}">Edit</a></td>
+                        <td><a href="{{ url_for('deleteTicket', id=ticket.id) }}">Delete</a></td>
+                        <td><a href="{{ url_for('viewBookings', id=ticket.id) }}">View Bookings</a></td>
+                        <!-- <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('deleteTicket', id=ticket.id) }}" style="background-color: red;">Delete</a></td> -->
+                    </tr>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>

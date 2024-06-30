@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Ticket</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Book Ticket</h1>
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">PHONE:</label>
+        <input type="tel" id="email" name="email" required><br>
+        <button type="submit" style="margin-top: 50px;">Book Ticket</button>
+    </form>
+    <div class="" style="margin-top: 20px;">
+        <a href="{{ url_for('home') }}"  >Back to Home</a>
+
+    </div>
+    
+</body>
+</html>

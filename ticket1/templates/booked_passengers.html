@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booked Passengers</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Booked Passengers for Ticket ID {{ ticket_id }}</h1>
+    <!-- <ul>
+        {% for booking in bookings %}
+        <li>
+            {{ booking.name }} ({{ booking.email }}) - Booked on {{ booking.booking_date }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="" style="margin-top: 50px;">
+        <a href="{{ url_for('admin') }}" style="margin-top: 50px;">Back to Admin</a>
+    </div> -->
+    <table>
+        <tr>
+            <th>BOOKING NAME </th>
+            <th>BOOKING DATE</th>
+            <th>BOOKING DATE</th>
+        </tr>
+        {% for booking in bookings %}
+            <tr>
+                <tr>
+                    <td>{{ booking.name  }}</td>
+                    <td>{{  booking.email  }}</td>
+                    <td>(${{  booking.booking_date }})</td>
+                </tr>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="" style="margin-top: 50px;">
+        <a href="{{ url_for('admin') }}" style="margin-top: 50px;">Back to Admin</a>
+    </div> 
+</body>
+</html>

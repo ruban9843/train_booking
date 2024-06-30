@@ -1,0 +1,38 @@
+CREATE DATABASE ticket_booking;
+
+USE ticket_booking;
+
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    event VARCHAR(100),
+    date VARCHAR(100),
+    price FLOAT
+);
+select *from tickets
+
+CREATE DATABASE IF NOT EXISTS ticket_booking;
+
+USE ticket_booking;
+
+CREATE TABLE IF NOT EXISTS passengers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    event VARCHAR(100),
+    date VARCHAR(100),
+    price FLOAT
+);
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    passenger_id INT,
+    ticket_id INT,
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  
+);
+select *from bookings

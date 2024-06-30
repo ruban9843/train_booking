@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Ticket Booking Management</h1>
+      
+        <a href="{{ url_for('admin') }}">Admin</a>
+    </header>
+    <main>
+        <h2 style="margin-top: 30px;">Available Tickets</h2>
+        <!-- <ul>
+            {% for ticket in tickets %}
+            <li>
+                {{ ticket.event }} on {{ ticket.date }} (${{ ticket.price }})
+                <a href="{{ url_for('bookTicket', id=ticket.id) }}">Book</a>
+            </li>
+            {% endfor %}
+        </ul> -->
+        <table>
+            <tr>
+                <th>TICKET EVENT</th>
+                <th>DATE</th>
+                <th>PRICE</th>
+                <th>BOOK</th>
+                
+            </tr>
+            {% for ticket in tickets  %}
+                <tr>
+                    <tr>
+                        <td>{{ ticket.event }}</td>
+                        <td>{{ ticket.date }}</td>
+                        <td>(${{ ticket.price }})</td>
+                        <td><a href="{{ url_for('bookTicket', id=ticket.id) }}" class="book">book</a></td>
+                        <!-- <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('deleteTicket', id=ticket.id) }}" style="background-color: red;">Delete</a></td> -->
+                    </tr>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>

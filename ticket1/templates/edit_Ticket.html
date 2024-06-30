@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Ticket</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Edit Ticket</h1>
+    <form method="post">
+        <label for="event">Event:</label>
+        <input type="text" id="event" name="event" value="{{ ticket.event }}" required><br>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="{{ ticket.date }}" required><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" value="{{ ticket.price }}" required><br>
+        <button type="submit" style="width: 100px; height: 20px; margin-top: 20px; background-color: rgb(185, 102, 102);">Update Ticket</button>
+    </form>
+    <div class="" style="margin-top: 30px;">
+        <a href="{{ url_for('admin') }}">Back to Admin</a>
+
+    </div>
+   
+</body>
+</html>
