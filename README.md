@@ -26,33 +26,4 @@ This is a web application built with Flask that allows users to book train ticke
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
 
-Install Dependencies:
 
-bash
-Copy code
-pip install -r requirements.txt
-Set Up Environment Variables:
-Create a .env file and add your MongoDB connection string:
-
-plaintext
-Copy code
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/ticket_booking?retryWrites=true&w=majority
-Run the Application:
-
-bash
-Copy code
-flask run
-Access the Application:
-Visit http://localhost:5000 in your browser.
-
-Usage
-Admin Login: Access the admin dashboard by entering the admin password.
-Manage Tickets: Add, edit, and delete train tickets.
-Book Tickets: Users can book tickets and view available options.
-Important Note
-Please update the default admin password and database credentials in the .env file for security purposes.
-
-Future Improvements
-Implement user registration and authentication.
-Add payment gateway integration.
-Enhance UI with additional features.
